@@ -6,9 +6,9 @@ SECTIONS
     . = 0x80200000;             /* start of the kernel */
 
     .text : {                   /* .text will be the first section */
-        *(.text.entry)          /* .text.entry is at the bottom */
+        *(.text.entry)          /* .text.entry is the start */
         *(.text .text.*)
-        PROVIDE(etext = .);     /* the end of .text */
+        etext = .;              /* end of .text */
     }
 
     .rodata : {
@@ -26,10 +26,12 @@ SECTIONS
     .bss : {
         . = ALIGN(4K);
         *(.bss.stack)
+        sbss = .;               /* start of .bss */
         *(.bss .bss.*)
         *(.sbss .sbss.*)
+        ebss = .;               /* end of .bss */
     }
-    
+
     . = ALIGN(4K);
-    PROVIDE(ekernel = .);       /* end of the kernel */
+    ekernel = .;                /* end of the kernel */
 }
