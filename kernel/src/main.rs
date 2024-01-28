@@ -1,6 +1,7 @@
 #![no_std]
 #![no_main]
 
+mod sbi;
 mod lang;
 
 use core::arch::global_asm;
