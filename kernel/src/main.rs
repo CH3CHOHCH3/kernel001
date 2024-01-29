@@ -3,6 +3,7 @@
 
 mod sbi;
 mod lang;
+mod stdio;
 
 use core::arch::global_asm;
 global_asm!(include_str!("entry.S"));
@@ -10,6 +11,7 @@ global_asm!(include_str!("entry.S"));
 #[no_mangle]
 pub fn start() -> ! {
     clear_bss();
+    println!("{} is booting.", "kernel001");
     loop {}
 }
 
