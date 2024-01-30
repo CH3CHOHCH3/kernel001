@@ -1,5 +1,6 @@
 #![no_std]
 #![no_main]
+#![feature(panic_info_message)]
 
 mod sbi;
 mod lang;
@@ -12,7 +13,7 @@ global_asm!(include_str!("entry.S"));
 pub fn start() -> ! {
     clear_bss();
     println!("{} is booting.", "kernel001");
-    loop {}
+    panic!("shutdown the qemu now.");
 }
 
 /**

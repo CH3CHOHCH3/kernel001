@@ -8,6 +8,8 @@ This kernel runs on qemu and refers to the implementation of [rCore](https://wyf
 
 ## Rust
 
+> NOTE: The nightly rustc version must be used!
+
 ```
 curl https://sh.rustup.rs -sSf | sh
 cargo install cargo-binutils
