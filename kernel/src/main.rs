@@ -5,6 +5,7 @@
 mod sbi;
 mod lang;
 mod stdio;
+mod config;
 
 use core::arch::global_asm;
 global_asm!(include_str!("entry.S"));
