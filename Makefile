@@ -9,7 +9,7 @@ GDB = riscv64-unknown-elf-gdb
 BIOS = opensbi/build/platform/generic/firmware
 RELEASE = target/riscv64gc-unknown-none-elf/release
 
-QEMUOPTS = -machine virt -nographic -bios $(BIOS)/fw_jump.bin
+QEMUOPTS = -machine virt -nographic -bios $(BIOS)/fw_jump.bin -m 128M
 QEMUOPTS += -device loader,file=$(RELEASE)/kernel.bin,addr=0x80200000
 
 

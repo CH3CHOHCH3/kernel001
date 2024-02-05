@@ -13,14 +13,18 @@ SECTIONS
 
     .rodata : {
         . = ALIGN(4K);          /* another page for .rodata section */
+        srodata = .;            /* start of .rodata */
         *(.rodata .rodata.*)
         *(.srodata .srodata.*)
+        erodata = .;            /* end of .rodata */
     }
 
     .data : {
         . = ALIGN(4K);
+        sdata = .;               /* start of .data */
         *(.data .data.*)
         *(.sdata .sdata.*)
+        edata = .;               /* end of .data */
     }
 
     .bss : {

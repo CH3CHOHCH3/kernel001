@@ -1,5 +1,5 @@
-const PAGE_SIZE: u64 = 4096;
-const PHSY_MEM_SIZE: u64 = 128*1024*1024;
+pub const PAGE_SIZE: usize = 4096;
+pub const PHSY_MEM_TOP: usize = 0x88000000;
 
 #[macro_export]
 macro_rules! pgroundup {
